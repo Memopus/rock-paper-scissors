@@ -13,6 +13,19 @@ const computerSelection = document.createElement("img");
 const playerSelection = document.createElement("img");
 outputs.insertBefore(comment, selections);
 
+playerSelection.src = `assets/interrogation.png`;
+computerSelection.src = `assets/interrogation.png`;
+comment.textContent = "Choose a Weapon";
+
+computerDiv.appendChild(computerSelection);
+playerDiv.appendChild(playerSelection);
+
+userScore.textContent = `Your Score : 0`;
+machineScore.textContent = `Machine Score : 0`;
+
+computerDiv.appendChild(machineScore);
+playerDiv.appendChild(userScore);
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -22,18 +35,12 @@ choices.forEach((item) => {
     const computerChoice = getComputerChoice();
     game(e.target.alt, computerChoice);
     userScore.textContent = `Your Score : ${playerScore}`;
-
     machineScore.textContent = `Machine Score : ${computerScore}`;
     console.log(e.target.src);
     playerSelection.src = `${e.target.src}`;
     computerSelection.src = `assets/${computerChoice}.png`;
-    computerDiv.appendChild(computerSelection);
-    playerDiv.appendChild(playerSelection);
-    computerDiv.appendChild(machineScore);
-    playerDiv.appendChild(userScore);
 
     if (playerScore === 5) {
-      const body = document.querySelector("body");
       document.getElementById("result").textContent = "You Won !!!!";
       document.querySelector("button").addEventListener("click", reset);
       document.querySelector(".choices").classList.add("stop");
@@ -92,7 +99,9 @@ function reset() {
   computerScore = 0;
   userScore.textContent = `Your Score : ${playerScore}`;
   machineScore.textContent = `Machine Score : ${computerScore}`;
-  comment.textContent = "";
+  comment.textContent = "Choose a Weapon";
+  playerSelection.src = `assets/interrogation.png`;
+  computerSelection.src = `assets/interrogation.png`;
   document.querySelector(".choices").classList.remove("stop");
   result.classList.remove("active");
 }
