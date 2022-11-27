@@ -5,8 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <h1>ROCK PAPER SCISSORS</h1>
+    </header>
+
+    <div class="outputs">
+      <div class="selections">
+        <div class="player"></div>
+        <div class="computer"></div>
+      </div>
+    </div>
+
+    <div class="choices">
+      <div class="choice" id="rock">
+        <img src="assets/rock.png" alt="rock" />
+        <h2>Rock</h2>
+      </div>
+      <div class="choice" id="paper">
+        <img src="assets/paper.png" alt="paper" />
+        <h2>Paper</h2>
+      </div>
+      <div class="choice" id="scissors">
+        <img src="assets/scissors.png" alt="scissors" />
+        <h2>Scissors</h2>
+      </div>
+    </div>
+    <div class="scores"></div>
+    <div class="result">
+      <h2 id="result">you won</h2>
+      <button>Play Again</button>
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>
